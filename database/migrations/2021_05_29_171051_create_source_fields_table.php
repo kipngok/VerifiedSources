@@ -15,6 +15,8 @@ class CreateSourceFieldsTable extends Migration
     {
         Schema::create('source_fields', function (Blueprint $table) {
             $table->id();
+            $table->integer('source_id');
+            $table->integer('field_id');
             $table->timestamps();
         });
     }

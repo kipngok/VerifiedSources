@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Contact extends Model
 {
     use HasFactory;
+    protected $table='contacts';
+    protected $fillable=['source_id','type','contact'];
+
+    public function source(){
+    	return $this->hasOne('App\Models\Source','id','source_id');
+    }
 }
