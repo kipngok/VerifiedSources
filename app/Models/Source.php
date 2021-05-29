@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Source extends Model
 {
     use HasFactory;
+
+
+
+    public function contact(){
+    	return $this->haMany('App\Models\Contact','contact_id','id');
+    }
 }
