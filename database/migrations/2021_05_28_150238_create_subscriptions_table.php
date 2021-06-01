@@ -17,6 +17,7 @@ class CreateSubscriptionsTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('package');
+            $table->string('expiry_date');
             $table->string('date')->nullable();
             $table->timestamps();
         });

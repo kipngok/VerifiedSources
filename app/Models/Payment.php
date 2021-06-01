@@ -9,13 +9,10 @@ class Payment extends Model
 {
     use HasFactory;
     protected $table='payments';
-    protected $fillable=['user_id','date','channel','transaction_id'];
+    protected $fillable=['user_id','date','channel','amount'];
 
     public function user(){
     	return $this->hasOne('App\Models\User','id','user_id');
     }
 
-    public function transaction(){
-    	return $this->hasOne('App\Models\Transaction','id','transaction_id');
-    }
 }
