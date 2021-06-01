@@ -11,4 +11,8 @@ class Field extends Model
     protected $table='fields';
     protected $fillable=['name','description','status'];
 
+    public function sourceFields(){
+    	return $this->hasMany('App\Models\sourceField','field','id');
+    }
+
 }

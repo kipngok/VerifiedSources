@@ -16,10 +16,12 @@ class CreateSourcesTable extends Migration
         Schema::create('sources', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('bio');
+            $table->string('bio')->nullable();
             $table->string('status');
-            $table->string('title');
-            $table->string('company');
+            $table->string('profile_pic');
+            $table->string('profession');
+            $table->string('title')->nullable();
+            $table->string('company')->nullable();
             $table->timestamps();
         });
     }

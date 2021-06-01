@@ -11,8 +11,8 @@ class Package extends Model
     protected $table='packages';
     protected $fillable=['name','description','amount','time'];
 
-    public function subscription(){
-    	return $this->hasMany('App\Models\Subscription','subscription_id','id');
+    public function subscriptions(){
+    	return $this->hasMany('App\Models\Subscription','package_id','id');
 
     }
 

@@ -18,7 +18,8 @@ class CreatePaymentsTable extends Migration
             $table->integer('user_id');
             $table->string('date');
             $table->string('channel');
-            $table->integer('transaction_id');
+            $table->string('transaction_id')->nullable();
+            $table->integer('amount');
             $table->timestamps();
         });
     }
