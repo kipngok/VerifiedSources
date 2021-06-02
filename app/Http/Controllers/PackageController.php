@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class PackageController extends Controller
 {
-    /**
+    /**'name','description','amount','time'
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

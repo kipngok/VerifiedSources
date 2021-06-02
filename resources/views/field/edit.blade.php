@@ -20,6 +20,7 @@
    <option value="Inactive">Inactive</option>
    </select>
    </div>
+   <button type="submit" class="btn btn-sm btn-success">update</button>
 </form>
 </div>
 </div>

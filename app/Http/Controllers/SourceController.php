@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class SourceController extends Controller
 {
-    /**
+    /**'name', 'bio', 'status', 'title', 'profile_picture'
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -16,9 +16,7 @@ class SourceController extends Controller
     {
         //
         $sources=Source::all();
-        $contacts=Contact::all();
-        $sourcefields=SourceField::all();
-        return view('source.index',compact('contacts','sourcefields','sources'));
+        return view('source.index',compact('sources'));
     }
 
     /**
@@ -29,9 +27,7 @@ class SourceController extends Controller
     public function create()
     {
         //
-        $contacts=Contact::all();
-        $sourcefields=SourceField::all();
-        return view('source.create',compact('contacts','sourcefields',));
+        return view('source.create');
     }
 
     /**
@@ -42,8 +38,18 @@ class SourceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //'name', 'bio', 'status', 'title', 'profile_picture'
+         $this->validate(request(),[
+            'name'=>'required',
+            'bio'=>'required',
+            'status'=>'required',
+            'title'=>'required',
+            'profile_picture'=>'required',
+        ]);
         $input=$request->all();
+        $profile_picture=$request->file('profile_picture');
+        if(isset($profilepicture)){
+            $input['profilepicture']='storage/app/'.$request->file('profile_picture')->store('uploads');
         $source=Source::create($input);
         return redirect('/source/'.$source->$id);
     }
@@ -57,10 +63,7 @@ class SourceController extends Controller
     public function show(Source $source)
     {
         //
-        $sources=Source::all();
-        $contacts=Contact::all();
-        $sourcefields=SourceField::all();
-        return view('source.show',compact('contacts','sourcefields','sources'));
+        return view('source.show');
     }
 
     /**
@@ -71,11 +74,8 @@ class SourceController extends Controller
      */
     public function edit(Source $source)
     {
-        //
-        $sources=Source::all();
-        $contacts=Contact::all();
-        $sourcefields=SourceField::all();
-        return view('source.edit',compact('contacts','sourcefields','sources'));
+        //    
+        return view('source.edit');
     }
 
     /**

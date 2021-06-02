@@ -42,6 +42,9 @@ class SubscriptionController extends Controller
     public function store(Request $request)
     {
         //
+        $input=$request->all();
+        $subscription= Subscription::create($input);
+        return redirect('/subscription/'.$subscription->id);
     }
 
     /**
@@ -67,6 +70,7 @@ class SubscriptionController extends Controller
     public function edit(Subscription $subscription)
     {
         //
+        return view('subscription.edit', compact('subscription'));
     }
 
     /**
@@ -79,6 +83,8 @@ class SubscriptionController extends Controller
     public function update(Request $request, Subscription $subscription)
     {
         //
+        $input=$request->all();
+        $subscription->update($input);
     }
 
     /**
@@ -90,5 +96,7 @@ class SubscriptionController extends Controller
     public function destroy(Subscription $subscription)
     {
         //
+        $subscription->delete();
+        return redirect('/subscription');
     }
 }

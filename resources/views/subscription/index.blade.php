@@ -22,7 +22,7 @@
      <td>{{$subscription->date}}/td>
      <td>{{$subscription->status}}/td>
      <td>{{$subscription->amount}}/td>
-     <td>{{$subscription->user}}/td>
+     <td>{{$subscription->user->name}}/td>
 
 
      <td><a href="/subscription/{{$subscription->id}}" class="btn btn-sm btn-success">View</a></td>

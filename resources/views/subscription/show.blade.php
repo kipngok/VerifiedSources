@@ -7,7 +7,7 @@
   <tr><th></th><td>{{$subscription->date}}</td></tr>
   <tr><th></th><td>{{$subscription->status}}</td></tr>
   <tr><th></th><td>{{$subscription->amount}}</td></tr>
-  <tr><th></th><td>{{$subscription->user}}</td></tr>
+  <tr><th></th><td>{{$subscription->user->name}}</td></tr>
 
   </table>
   <div class="btn btn-group">
