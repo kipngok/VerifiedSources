@@ -15,6 +15,9 @@ class ContactController extends Controller
     public function index()
     {
         //
+        $contacts=Contact::all();
+        $sources=Source::all();
+        return view('contact.index',compact('contacts','sources'));
     }
 
     /**
@@ -25,6 +28,9 @@ class ContactController extends Controller
     public function create()
     {
         //
+        $sources=Source::all();
+        return view('contact.create',compact('sources'));
+
     }
 
     /**
@@ -36,6 +42,9 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         //
+        $input=$request->all();
+        $contact->Contact::create($input);
+        return redirect('/contact/'.$contact->id);
     }
 
     /**
@@ -47,6 +56,8 @@ class ContactController extends Controller
     public function show(Contact $contact)
     {
         //
+        $sources=Source::all();
+        return view('contact.view',compact('sources'));
     }
 
     /**
@@ -58,6 +69,8 @@ class ContactController extends Controller
     public function edit(Contact $contact)
     {
         //
+        $sources=Source::all();
+        return view('contact.edit',compact('sources'));
     }
 
     /**
@@ -70,6 +83,9 @@ class ContactController extends Controller
     public function update(Request $request, Contact $contact)
     {
         //
+        $input=$request->all();
+        $contact->update($input);
+        return redirect('contact/'.$contact->id);
     }
 
     /**
@@ -81,5 +97,7 @@ class ContactController extends Controller
     public function destroy(Contact $contact)
     {
         //
+        $contact->delete();
+        return redirect('/contact');
     }
 }

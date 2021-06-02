@@ -15,6 +15,9 @@ class PackageController extends Controller
     public function index()
     {
         //
+        $package=Package::all();
+        $subscriptions=Subscriptions::all();
+        return view('package.index',compact('package','subscriptions'));
     }
 
     /**
@@ -25,6 +28,9 @@ class PackageController extends Controller
     public function create()
     {
         //
+        $subscriptions=Subscriptions::all();
+        return view('package.create',compact('subscriptions'));
+
     }
 
     /**
@@ -36,6 +42,9 @@ class PackageController extends Controller
     public function store(Request $request)
     {
         //
+        $input=$request->all();
+        $package=Package::create($input);
+        return redirect('/package/'.$package->id);
     }
 
     /**
@@ -47,6 +56,10 @@ class PackageController extends Controller
     public function show(Package $package)
     {
         //
+        $packages=Package::all();
+        $subscriptions=Subscriptions::all();
+        return view('package.show',compact('subscriptions','packages'));
+
     }
 
     /**
@@ -58,6 +71,10 @@ class PackageController extends Controller
     public function edit(Package $package)
     {
         //
+        $packages=Package::all();
+        $subscriptions=Subscriptions::all();
+        return view('package.edit',compact('subscriptions','packages'));
+
     }
 
     /**
@@ -70,6 +87,9 @@ class PackageController extends Controller
     public function update(Request $request, Package $package)
     {
         //
+        $input=$request->all();
+        $package->update($input);
+        return redirect('package/'.$package->id);
     }
 
     /**
@@ -81,5 +101,7 @@ class PackageController extends Controller
     public function destroy(Package $package)
     {
         //
+        $package->delete();
+        return redirect('/package');
     }
 }

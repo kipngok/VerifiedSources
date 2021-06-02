@@ -15,6 +15,10 @@ class FieldController extends Controller
     public function index()
     {
         //
+        $fields=Field::all();
+        $sourceFields=sourceField::all();
+        return view('field.index', compact('fields','sourceFields'))
+
     }
 
     /**
@@ -25,6 +29,8 @@ class FieldController extends Controller
     public function create()
     {
         //
+        $sourceFields=sourceField::all();
+        return view('field.create',compact('sourceFields'));
     }
 
     /**
@@ -36,6 +42,9 @@ class FieldController extends Controller
     public function store(Request $request)
     {
         //
+        $input=$request->all();
+        $field=Field::create($input);
+        return redirect('/field/'.$field->id);
     }
 
     /**
@@ -47,6 +56,9 @@ class FieldController extends Controller
     public function show(Field $field)
     {
         //
+        $sourceFields=sourceField::all();
+        $fields=Field::all();
+        return view('field.show',compact('fields','sourceFields'));
     }
 
     /**
@@ -58,6 +70,11 @@ class FieldController extends Controller
     public function edit(Field $field)
     {
         //
+        $fields=Field::all();
+        $sourceFields=sourceField::all();
+        return view('field.edit',compact('fields','sourceFields'));
+
+
     }
 
     /**
@@ -70,6 +87,9 @@ class FieldController extends Controller
     public function update(Request $request, Field $field)
     {
         //
+        $input=$request->all();
+        $field->update($input);
+        return redirect('field/'.$field->id);
     }
 
     /**
@@ -81,5 +101,7 @@ class FieldController extends Controller
     public function destroy(Field $field)
     {
         //
+        $contact->delete();
+        return redirect('/field');
     }
 }
