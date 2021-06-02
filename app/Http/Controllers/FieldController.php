@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class FieldController extends Controller
 {
-    /**
+    /**'name','description','status'
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -16,8 +16,7 @@ class FieldController extends Controller
     {
         //
         $fields=Field::all();
-        $sourceFields=sourceField::all();
-        return view('field.index', compact('fields','sourceFields'))
+        return view('field.index', compact('fields'));
 
     }
 
@@ -29,8 +28,7 @@ class FieldController extends Controller
     public function create()
     {
         //
-        $sourceFields=sourceField::all();
-        return view('field.create',compact('sourceFields'));
+        return view('field.create');
     }
 
     /**
@@ -42,6 +40,11 @@ class FieldController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate(request(),[
+            'name'=>'required',
+            'description'=>'required',
+            'status'=>'required',
+        ]);
         $input=$request->all();
         $field=Field::create($input);
         return redirect('/field/'.$field->id);
@@ -56,9 +59,7 @@ class FieldController extends Controller
     public function show(Field $field)
     {
         //
-        $sourceFields=sourceField::all();
-        $fields=Field::all();
-        return view('field.show',compact('fields','sourceFields'));
+        return view('field.show',compact('fields'));
     }
 
     /**
@@ -70,9 +71,7 @@ class FieldController extends Controller
     public function edit(Field $field)
     {
         //
-        $fields=Field::all();
-        $sourceFields=sourceField::all();
-        return view('field.edit',compact('fields','sourceFields'));
+        return view('field.edit',compact('fields'));
 
 
     }

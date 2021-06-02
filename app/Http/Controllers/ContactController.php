@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Source;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    /**
+    /**'source_id','type','contact'
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -42,6 +43,12 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate(request(),[
+            'source_id'=>'required',
+            'type'=>'required',
+            'contact'=>'required',
+        ]);
+
         $input=$request->all();
         $contact->Contact::create($input);
         return redirect('/contact/'.$contact->id);
@@ -56,8 +63,8 @@ class ContactController extends Controller
     public function show(Contact $contact)
     {
         //
-        $sources=Source::all();
-        return view('contact.view',compact('sources'));
+        $source = Source::all();
+        return view('contact.view',compact('source'));
     }
 
     /**
@@ -69,8 +76,8 @@ class ContactController extends Controller
     public function edit(Contact $contact)
     {
         //
-        $sources=Source::all();
-        return view('contact.edit',compact('sources'));
+        $source =Source::all();
+        return view('contact.edit',compact('source'));
     }
 
     /**

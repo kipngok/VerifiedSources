@@ -19,7 +19,7 @@
    <option value="Inactive">Inactive</option>
    </select>
    </div>
-   
+   <button type="submit" class="btn btn-sm btn-success">Save</button>
   </form>
  </div>
 </div>
