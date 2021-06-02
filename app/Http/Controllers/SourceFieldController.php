@@ -14,7 +14,10 @@ class SourceFieldController extends Controller
      */
     public function index()
     {
-        //
+        //source field
+        $sources=Source::all();
+        $fields=Field::all();
+        return view('sourceField.index',compact('sources','fields'));
     }
 
     /**
@@ -25,6 +28,9 @@ class SourceFieldController extends Controller
     public function create()
     {
         //
+        $sources=Source::all();
+        $fields=Field::all();
+        return view('sourceField.create',compact('sources','fields'));
     }
 
     /**
@@ -35,7 +41,10 @@ class SourceFieldController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // 
+        $input=$request->all();
+        $sourcefield=SourceField::create($input);
+        return redirect('/sourceField/'.$sourceField->id);
     }
 
     /**
@@ -47,6 +56,10 @@ class SourceFieldController extends Controller
     public function show(SourceField $sourceField)
     {
         //
+         $sources=Source::all();
+        $fields=Field::all();
+        return view('sourceField.show',compact('sources','fields'));
+
     }
 
     /**
@@ -58,6 +71,9 @@ class SourceFieldController extends Controller
     public function edit(SourceField $sourceField)
     {
         //
+         $sources=Source::all();
+        $fields=Field::all();
+        return view('sourceField.edit',compact('sources','fields'));
     }
 
     /**
@@ -70,6 +86,9 @@ class SourceFieldController extends Controller
     public function update(Request $request, SourceField $sourceField)
     {
         //
+        $input=$request->all();
+        $sourcefield->update($input);
+        return redirect('sourceField/'.$sourceField->$id);
     }
 
     /**
@@ -81,5 +100,7 @@ class SourceFieldController extends Controller
     public function destroy(SourceField $sourceField)
     {
         //
+        $sourcefield->delete();
+        return redirect('/sourceField');
     }
 }

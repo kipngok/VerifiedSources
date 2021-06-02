@@ -15,6 +15,10 @@ class SourceController extends Controller
     public function index()
     {
         //
+        $sources=Source::all();
+        $contacts=Contact::all();
+        $sourcefields=SourceField::all();
+        return view('source.index',compact('contacts','sourcefields','sources'));
     }
 
     /**
@@ -25,6 +29,9 @@ class SourceController extends Controller
     public function create()
     {
         //
+        $contacts=Contact::all();
+        $sourcefields=SourceField::all();
+        return view('source.create',compact('contacts','sourcefields',));
     }
 
     /**
@@ -36,6 +43,9 @@ class SourceController extends Controller
     public function store(Request $request)
     {
         //
+        $input=$request->all();
+        $source=Source::create($input);
+        return redirect('/source/'.$source->$id);
     }
 
     /**
@@ -47,6 +57,10 @@ class SourceController extends Controller
     public function show(Source $source)
     {
         //
+        $sources=Source::all();
+        $contacts=Contact::all();
+        $sourcefields=SourceField::all();
+        return view('source.show',compact('contacts','sourcefields','sources'));
     }
 
     /**
@@ -58,6 +72,10 @@ class SourceController extends Controller
     public function edit(Source $source)
     {
         //
+        $sources=Source::all();
+        $contacts=Contact::all();
+        $sourcefields=SourceField::all();
+        return view('source.edit',compact('contacts','sourcefields','sources'));
     }
 
     /**
@@ -70,6 +88,9 @@ class SourceController extends Controller
     public function update(Request $request, Source $source)
     {
         //
+        $input=$request->all();
+        $source->update($input);
+        return redirect('source/'.$source->id);
     }
 
     /**
@@ -81,5 +102,7 @@ class SourceController extends Controller
     public function destroy(Source $source)
     {
         //
+        $source->delete();
+        return redirect('/source');
     }
 }

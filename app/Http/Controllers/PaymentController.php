@@ -15,6 +15,9 @@ class PaymentController extends Controller
     public function index()
     {
         //
+        $users=User::all();
+        $payments=Payment::all();
+        return view('payment.index',compact('users','payments'));
     }
 
     /**
@@ -25,6 +28,8 @@ class PaymentController extends Controller
     public function create()
     {
         //
+        $users=User::all();
+        return view('payment.create',compact('users'));
     }
 
     /**
@@ -36,6 +41,9 @@ class PaymentController extends Controller
     public function store(Request $request)
     {
         //
+        $input=$request->all();
+        $payment=Payment::create($input);
+        return redirect('/payment/'.$payment->$id);
     }
 
     /**
@@ -47,6 +55,9 @@ class PaymentController extends Controller
     public function show(Payment $payment)
     {
         //
+        $users=User::all();
+        $payments=Payment::all();
+        return view('payment.show',compact('users','payments'));
     }
 
     /**
@@ -58,6 +69,9 @@ class PaymentController extends Controller
     public function edit(Payment $payment)
     {
         //
+        $users=User::all();
+        $payments=Payment::all();
+        return view('payment.edit',compact('users','payments'))
     }
 
     /**
@@ -70,6 +84,9 @@ class PaymentController extends Controller
     public function update(Request $request, Payment $payment)
     {
         //
+        $input=$request->all();
+        $payment->update($input);
+        return redirect('payment/'.$payment->$id);
     }
 
     /**
@@ -81,5 +98,7 @@ class PaymentController extends Controller
     public function destroy(Payment $payment)
     {
         //
+        $payment->delete();
+        return redirect('/payment');
     }
 }

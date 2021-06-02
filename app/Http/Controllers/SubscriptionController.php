@@ -14,7 +14,10 @@ class SubscriptionController extends Controller
      */
     public function index()
     {
-        //
+        //user, package
+        $users=User::all();
+        $packages=Package::all();
+        return view('subscription.index',compact('users','packages'));
     }
 
     /**
@@ -25,6 +28,9 @@ class SubscriptionController extends Controller
     public function create()
     {
         //
+        $users=User::all();
+        $packages=Package::all();
+        return view('subscription.index',compact('users','packages'));
     }
 
     /**
@@ -47,6 +53,9 @@ class SubscriptionController extends Controller
     public function show(Subscription $subscription)
     {
         //
+        $users=User::all();
+        $packages=Package::all();
+        return view('subscription.show',compact('users','packages'));
     }
 
     /**
