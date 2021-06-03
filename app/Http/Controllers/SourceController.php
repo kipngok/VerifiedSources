@@ -53,6 +53,7 @@ class SourceController extends Controller
         $source=Source::create($input);
         return redirect('/source/'.$source->$id);
     }
+}
 
     /**
      * Display the specified resource.
@@ -65,6 +66,7 @@ class SourceController extends Controller
         //
         return view('source.show');
     }
+
 
     /**
      * Show the form for editing the specified resource.
