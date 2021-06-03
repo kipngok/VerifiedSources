@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('content')
+<div class="row page-header">
+  <div class="col-sm-12">
+    <h2>Contact</h2>
+  </div>
+</div>
 <div class="row content-justify-center">
  <div class="col-sm-6">
   <table class="table table-bordered">

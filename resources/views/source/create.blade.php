@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('content')
+<div class="row page-header">
+  <div class="col-sm-12">
+    <h2>Source</h2>
+  </div>
+</div>
 <div class="row content-justify-center">
 <div class="col-sm-6">
 <form action="/source" method="POST" enctype="multipart/form-data">
@@ -26,7 +31,7 @@
 </div>
 <div class="form-group">
  <label>Profile Picture</label>
- <input type="text" name="profile_picture" class="form-control">
+ <input type="file" name="profile_picture" class="form-control">
 </div>
 <button type="submit" class="btn btn-sm btn-success">Save</button>
 </form>

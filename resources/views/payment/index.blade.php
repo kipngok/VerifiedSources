@@ -1,8 +1,17 @@
 @extends('layouts.app')
 @section('content')
+<div class="row page-header">
+  <div class="col-sm-12">
+    <h2>Payment</h2>
+  </div>
+</div>
+<div class="row page-header">
+  <div class="col-sm-12">
+    <h2>Payments</h2>
+  </div>
+</div>
 <div class="row content-justify-center">
  <div class="col-sm-6">
-  <a href="/payment/create" class="btn btn-sm btn-success">Create</a>
   <table class="table table-bordered">
    <thead>
     <tr>

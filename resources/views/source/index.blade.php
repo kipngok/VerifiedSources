@@ -1,8 +1,12 @@
 @extends('layouts.app')
 @section('content')
+<div class="row page-header">
+  <div class="col-sm-12">
+    <h2>Source</h2>
+  </div>
+</div>
 <div class="row content-justify-center">
  <div class="col-sm-6">
-  <a href="/source/create" class="btn btn-sm btn-success">CREATE</a>
   <table class="table table-bordered">
   <thead>
    <tr>
