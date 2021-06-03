@@ -20,13 +20,13 @@ return view('welcome');
 Auth::routes();
 
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('/','App\Http\Controllers\ContactController');
-Route::resource('/Field','App\Http\Controllers\FieldController');
-Route::resource('/Package','App\Http\Controllers\PackageController');
-Route::resource('/Payment','App\Http\Controllers\PaymentController');
-Route::resource('/Source','App\Http\Controllers\SourceController');
-Route::resource('/SourceField','App\Http\Controllers\SourceFieldController');
-Route::resource('/Subscription','App\Http\Controllers\SubscriptionController');
+Route::resource('/contact','App\Http\Controllers\ContactController');
+Route::resource('/field','App\Http\Controllers\FieldController');
+Route::resource('/package','App\Http\Controllers\PackageController');
+Route::resource('/payment','App\Http\Controllers\PaymentController');
+Route::resource('/source','App\Http\Controllers\SourceController');
+Route::resource('/sourceField','App\Http\Controllers\SourceFieldController');
+Route::resource('/subscription','App\Http\Controllers\SubscriptionController');
 
 
 

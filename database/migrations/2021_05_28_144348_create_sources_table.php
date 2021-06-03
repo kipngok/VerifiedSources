@@ -22,7 +22,7 @@ class CreateSourcesTable extends Migration
             $table->string('profession');
             $table->string('title')->nullable();
             $table->string('company')->nullable();
-            $table->file('profile_picture')->nullable();
+            $table->string('profile_picture')->nullable();
             $table->timestamps();
         });
     }
