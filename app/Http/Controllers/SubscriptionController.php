@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Subscription;
+use App\Models\Package;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SubscriptionController extends Controller
@@ -15,9 +17,10 @@ class SubscriptionController extends Controller
     public function index()
     {
         //user, package
+        $subscriptions=Subscription::all();
         $users=User::all();
         $packages=Package::all();
-        return view('subscription.index',compact('users','packages'));
+        return view('subscription.index',compact('users','packages','subscriptions'));
     }
 
     /**
@@ -28,9 +31,10 @@ class SubscriptionController extends Controller
     public function create()
     {
         //
+        $subscriptions=Subscription::all();
         $users=User::all();
         $packages=Package::all();
-        return view('subscription.index',compact('users','packages'));
+        return view('subscription.create',compact('users','packages','subscriptions'));
     }
 
     /**

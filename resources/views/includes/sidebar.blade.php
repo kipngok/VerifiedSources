@@ -7,15 +7,15 @@
      </a>
      <ul class="nolist">
       <li><a href="/source">All Sources</a></li>
-      <li><a href="#">Create sources</a></li>
+      <li><a href="/source/create">Create sources</a></li>
       </ul>
       </li> 
       <li>
      <a href="#fields" class="navy">  Field<i class="fa fa-chevron-right"></i>
      </a>
      <ul class="nolist">
-      <li><a href="#">All Field</a></li>
-      <li><a href="#">Create Field</a></li>
+      <li><a href="/field">All Field</a></li>
+      <li><a href="/field/create">Create Field</a></li>
       </ul>
       </li>
 
@@ -23,7 +23,7 @@
      <a href="#payments" class="navy">  Payments<i class="fa fa-chevron-right"></i>
      </a>
      <ul class="nolist">
-      <li><a href="#">Payments</a></li>
+      <li><a href="/payment">Payments</a></li>
       </ul>
       </li>
        
@@ -31,16 +31,16 @@
      <a href="#Subscription" class="navy">  Subscription<i class="fa fa-chevron-right"></i>
      </a>
      <ul class="nolist">
-      <li><a href="#">Subscription</a></li>
-      <li><a href="#">Create Subscription</a></li>
+      <li><a href="/subscription">Subscription</a></li>
+      <li><a href="/subscription/create">Create Subscription</a></li>
       </ul>
       </li>
         <li>
      <a href="#Contact" class="navy">  Contacts<i class="fa fa-chevron-right"></i>
      </a>
      <ul class="nolist">
-      <li><a href="#">Contacts</a></li>
-      <li><a href="#">Create Contacts</a></li>
+      <li><a href="/contact">Contacts</a></li>
+      <li><a href="/contact/create">Create Contacts</a></li>
       </ul>
       </li>
       <li>
