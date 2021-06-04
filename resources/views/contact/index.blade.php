@@ -5,13 +5,9 @@
     <h2>Contact</h2>
   </div>
 </div>
-<div class="row page-header">
-  <div class="col-sm-12">
-    <h2>Contact</h2>
-  </div>
-</div>
+<div class="container">
 <div class="row content-justify-center">
- <div class="col-sm-6">
+ <div class="col">
   <table class="table table-bordered">
    <thead>
     <tr>
@@ -34,6 +30,8 @@
      @endforeach
    </tbody>
   </table>
+
  </div>
+</div>
 </div>
 @endsection
