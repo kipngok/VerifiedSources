@@ -16,6 +16,7 @@
     <th>Status</th>
     <th>Title</th>
     <th>Company</th>
+    <th></th>
    </tr>
   </thead>
   <tbody>
@@ -26,7 +27,6 @@
   <td>{{$source->status}}</td>
   <td>{{$source->title}}</td>
   <td>{{$source->company}}</td>
-  <td>{{$source->profile_picture}}</td>
   <td><a href="/source/{{$source->id}}" class="btn btn-sm btn-success">VIEW</a>
   </tr>
   @endforeach

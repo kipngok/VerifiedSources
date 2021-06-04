@@ -266,6 +266,68 @@ nav.navbar.navbar-expand-md.navbar-light.bg-light {
 }
 
 
+
+.source-image{
+  display: block;
+  width: 100px;
+  border-radius: 50px;
+  border:3px solid #09c;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: #DDDDDD;
+}
+.source-widgets{
+  text-align: center;
+}
+.source-title{
+display: inline-block;
+padding: 3px;
+background-color: #DDDDDD;
+margin-top:2px;
+border-radius:5px;
+font-size: 11px;
+margin:auto;
+}
+.source-company{
+display: inline-block;
+padding: 3px;
+background-color: #DDDDDD;
+margin-top:2px;
+border-radius:5px;
+font-size: 11px;
+margin:auto;
+}
+.source-name{
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+}
+.source-bio{
+  text-align: center;
+}
+.source-field .card-body{
+padding: 5px;
+}
+.source-field-heading{
+  font-size: 15px;
+  font-weight: 300;
+}
+.source-field-heading i{
+  display: inline-block;
+  padding: 5px;
+  background-color: #DDD;
+  width: 25px;
+  height: 25px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 50%;
+}
+form.field-delete-form {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
 @media only screen and (max-width: 990px){
 .container{
   padding: 10px !important;

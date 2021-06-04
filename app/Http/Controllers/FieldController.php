@@ -62,7 +62,7 @@ class FieldController extends Controller
     public function show(Field $field)
     {
         //
-        return view('field.show',compact('fields'));
+        return view('field.show',compact('field'));
     }
 
     /**
@@ -74,7 +74,7 @@ class FieldController extends Controller
     public function edit(Field $field)
     {
         //
-        return view('field.edit',compact('fields'));
+        return view('field.edit',compact('field'));
 
 
     }

@@ -11,11 +11,11 @@
 @csrf
  <div class="form-group">
  <label>Name</label>
- <input type="text" name="source" class="form-control">
+ <input type="text" name="name" class="form-control">
 </div>
  <div class="form-group">
  <label>Bio</label>
- <input type="text" name="bio" class="form-control">
+ <textarea name="bio" class="form-control"></textarea>
 </div>
  <div class="form-group">
  <label>Status</label>
@@ -24,6 +24,10 @@
  <div class="form-group">
  <label>Title</label>
  <input type="text" name="title" class="form-control">
+</div>
+ <div class="form-group">
+ <label>Profession</label>
+ <input type="text" name="profession" class="form-control">
 </div>
 <div class="form-group">
  <label>Company</label>

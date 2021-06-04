@@ -43,8 +43,8 @@ class SourceFieldController extends Controller
     {
         // 
         $input=$request->all();
-        $sourcefield=SourceField::create($input);
-        return redirect('/sourceField/'.$sourceField->id);
+        $sourceField=SourceField::create($input);
+        return redirect('/source/'.$sourceField->source_id);
     }
 
     /**
@@ -100,7 +100,8 @@ class SourceFieldController extends Controller
     public function destroy(SourceField $sourceField)
     {
         //
-        $sourcefield->delete();
-        return redirect('/sourceField');
+        $source_id=$sourceField->source_id;
+        $sourceField->delete();
+        return redirect('/source/'.$source_id);
     }
 }

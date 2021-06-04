@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Source;
+use App\Models\Field;
 use Illuminate\Http\Request;
 
 class SourceController extends Controller
@@ -42,6 +43,7 @@ class SourceController extends Controller
     public function store(Request $request)
     {
         //'name', 'bio', 'status', 'title', 'profile_picture'
+        /*dd($request->all());*/
          $this->validate(request(),[
             'name'=>'required',
             'bio'=>'required',
@@ -51,11 +53,12 @@ class SourceController extends Controller
         ]);
         $input=$request->all();
         $profile_picture=$request->file('profile_picture');
-        if(isset($profilepicture)){
-            $input['profilepicture']='storage/app/'.$request->file('profile_picture')->store('uploads');
+        if(isset($profile_picture)){
+            $input['profile_pic']='storage/app/'.$request->file('profile_picture')->store('uploads');
+        }
         $source=Source::create($input);
-        return redirect('/source'.$source->$id);
-    }
+        /*dd($source);*/
+        return redirect('/source/'.$source->id);
 }
 
     /**
@@ -67,7 +70,8 @@ class SourceController extends Controller
     public function show(Source $source)
     {
         //
-        return view('source.show');
+        $fields=Field::all();
+        return view('source.show', compact('source','fields'));
     }
 
 
@@ -80,7 +84,7 @@ class SourceController extends Controller
     public function edit(Source $source)
     {
         //    
-        return view('source.edit');
+        return view('source.edit',compact('source'));
     }
 
     /**

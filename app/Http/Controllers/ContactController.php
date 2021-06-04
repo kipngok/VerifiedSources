@@ -53,8 +53,8 @@ class ContactController extends Controller
         ]);
 
         $input=$request->all();
-        $contact->Contact::create($input);
-        return redirect('/contact/'.$contact->id);
+        $contact=Contact::create($input);
+        return redirect('/source/'.$contact->source_id);
     }
 
     /**
@@ -67,7 +67,7 @@ class ContactController extends Controller
     {
         //
         $source = Source::all();
-        return view('contact.view',compact('source'));
+        return view('contact.show',compact('contact'));
     }
 
     /**
@@ -107,7 +107,8 @@ class ContactController extends Controller
     public function destroy(Contact $contact)
     {
         //
+        $source_id=$contact->source_id;
         $contact->delete();
-        return redirect('/contact');
+        return redirect('/source/'.$source_id);
     }
 }
