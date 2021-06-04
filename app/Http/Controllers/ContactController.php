@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**'source_id','type','contact'
      * Display a listing of the resource.
      *

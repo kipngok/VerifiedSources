@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class FieldController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**'name','description','status'
      * Display a listing of the resource.
      *

@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class SourceController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**'name', 'bio', 'status', 'title', 'profile_picture'
      * Display a listing of the resource.
      *
@@ -51,7 +54,7 @@ class SourceController extends Controller
         if(isset($profilepicture)){
             $input['profilepicture']='storage/app/'.$request->file('profile_picture')->store('uploads');
         $source=Source::create($input);
-        return redirect('/source/'.$source->$id);
+        return redirect('/source'.$source->$id);
     }
 }
 
