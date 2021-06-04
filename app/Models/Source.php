@@ -9,7 +9,7 @@ class Source extends Model
 {
     use HasFactory;
     protected $table='sources';
-    protected $fillable=['name', 'bio', 'status', 'title', 'profile_picture'];
+    protected $fillable=['name', 'bio', 'status', 'title', 'profile_pic','profession','company'];
 
     public function contacts(){
     	return $this->hasMany('App\Models\Contact','source_id','id');

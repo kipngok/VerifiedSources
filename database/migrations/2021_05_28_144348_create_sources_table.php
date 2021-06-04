@@ -18,8 +18,8 @@ class CreateSourcesTable extends Migration
             $table->string('name');
             $table->string('bio')->nullable();
             $table->string('status');
-            $table->string('profile_pic');
-            $table->string('profession');
+            $table->string('profile_pic')->nullable();
+            $table->string('profession')->nullable();
             $table->string('title')->nullable();
             $table->string('company')->nullable();
             $table->string('profile_picture')->nullable();

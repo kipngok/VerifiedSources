@@ -35,14 +35,6 @@
       <li><a href="/subscription/create">Create Subscription</a></li>
       </ul>
       </li>
-        <li>
-     <a href="#Contact" class="navy">  Contacts<i class="fa fa-chevron-right"></i>
-     </a>
-     <ul class="nolist">
-      <li><a href="/contact">Contacts</a></li>
-      <li><a href="/contact/create">Create Contacts</a></li>
-      </ul>
-      </li>
       <li>
      <a href="#settings" class="navy">  Settings<i class="fa fa-chevron-right"></i>
      </a>

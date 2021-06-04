@@ -9,9 +9,9 @@
  <div class="col-sm-6">
   <table class="table table-bordered">
   <tbody>
-  <tr><th></th><td>{{$field->name}}</td></tr>
-  <tr><th></th><td>{{$field->description}}</td></tr>
-  <tr><th></th><td>{{$field->status}}</td></tr>
+  <tr><th>Name</th><td>{{$field->name}}</td></tr>
+  <tr><th>Description</th><td>{{$field->description}}</td></tr>
+  <tr><th>Status</th><td>{{$field->status}}</td></tr>
   </tbody>
   </table>
   <div class="btn btn-group">

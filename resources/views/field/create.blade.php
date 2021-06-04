@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('content')
+<div class="row page-header">
+  <div class="col-sm-12">
+    <h2>Field</h2>
+  </div>
+</div>
 <div class="row content-justify-center">
  <div class="col-sm-6">
   <form action="/field" method="POST">
@@ -14,7 +19,7 @@
    </div>
    <div class="form-group">
    <label>Status</label>
-   <select class="form-select" name="status_id">
+   <select class="form-select" name="status">
    <option value="Active">Active</option>
    <option value="Inactive">Inactive</option>
    </select>

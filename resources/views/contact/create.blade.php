@@ -7,7 +7,7 @@
 </div>
 <div class="row content-justify-center">
  <div class="col-sm-6">
-  <form action="/subscription" method="POST">
+  <form action="/contact" method="POST">
   @csrf
    <div class="form-group">
    <label>Contact</label>
@@ -30,6 +30,7 @@
    @endforeach
    </select> 
    </div>
+   <button class="btn btn-sm btn-success" type="submit">Save</button>
   </form>
  </div>
 </div>

@@ -8,9 +8,9 @@
 <div class="row content-justify-center">
  <div class="col-sm-6">
   <table class="table table-bordered">
-  <tr><th></th><td>{{$contact->contact}}</td></tr>
-  <tr><th></th><td>{{$contact->type}}</td></tr>
-  <tr><th></th><td>{{$contact->source}}</td></tr>
+  <tr><th>Contact</th><td>{{$contact->contact}}</td></tr>
+  <tr><th>Type</th><td>{{$contact->type}}</td></tr>
+  <tr><th>Source</th><td>{{$contact->source->name}}</td></tr>
 
   </table>
   <div class="btn btn-group">

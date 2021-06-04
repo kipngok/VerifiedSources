@@ -20,7 +20,7 @@
    </div>
    <div class="form-group">
     <label>Status</label>
-   <select class="form-select" name="source_id" value="{{$field->status}}">
+   <select class="form-select" name="status" value="{{$field->status}}">
    <option value="Active">Active</option>
    <option value="Inactive">Inactive</option>
    </select>
