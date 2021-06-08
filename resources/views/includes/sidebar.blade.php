@@ -1,10 +1,8 @@
 <div class="col-sm-2 sidebar">
     <ul class="sidebar-menu">
-    <li><a href="/" class="navy"><i class="fa fa-tachometer" style="color: #eada0f;"></i> Dashboard</a>
+    <li><a href="/home" class="navy"><i class="fa fa-tachometer" style="color: #eada0f;"></i> Dashboard</a>
      </li>
-    <li>
-     <a href="#Sources" class="navy">  Sources<i class="fa fa-chevron-right"></i>
-     </a>
+    <li><a href="#Sources" class="navy">  Sources<i class="fa fa-chevron-right"></i> </a>
      <ul class="nolist">
       <li><a href="/source">All Sources</a></li>
       <li><a href="/source/create">Create sources</a></li>

@@ -19,7 +19,19 @@ class SourceController extends Controller
     public function index()
     {
         //
-        $sources=Source::all();
+        $sources=Source::paginate(20);
+        return view('source.index',compact('sources'));
+    }
+
+
+    public function field($id)
+    {
+        //
+        $sources=Source::select('sources.*')
+                        ->where('source_fields.field_id','=',$id)
+                        ->join('source_fields','sources.id','source_fields.source_id')
+                        ->paginate(20);
+
         return view('source.index',compact('sources'));
     }
 

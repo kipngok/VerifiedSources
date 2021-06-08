@@ -8,7 +8,10 @@ margin: 5px;
 .bg-white {
     background-color: #ffffff!important;
 }
-
+.cont{
+  margin-top: 79px;
+  padding: 0px;
+}
 .page-header{
   background-color: #3A3B42 !important;
   padding: 20px; 
@@ -24,20 +27,20 @@ margin: 5px;
     font-size: 16px;
     border-left: 5px #FDB819 solid;
 }
-
 .sidebar {
-    float:left;
-    background-color:#8B8C90;
-    /*position: fixed;*/
+    float: left;
+    background-color: #8B8C90;
+    position: fixed;
     padding: 0px;
-    min-height:85vh;
-
+    min-height: 85vh;
+    margin-top: 78px;
 }
-.cont{
-  display: block;
-  /*width:calc(100% - 200px);*/
-  float:left; 
+.conts{
+ 
   padding: 0px;
+  min-height: calc(100vh - 150px);
+  margin-left: 226px;
+  margin-top: 80px;
 }
 ul.navbar-nav {
     margin-left: 100px;
@@ -82,7 +85,7 @@ ul.navbar-nav {
 .sidebar-menu{
   margin: 0px;
   margin-top: 50px;
-    margin-bottom: 100px;
+  margin-bottom: 100px;
   padding: 0px;
 }
 .nolist{
@@ -221,37 +224,20 @@ nav.navbar.navbar-expand-md.navbar-light.bg-light {
     color: #4c2929;
     /* position: fixed; */
 }
-
-.footer-top{
-  background-color: #000;
-  color: #FFF;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  font-weight: 300;
-  font-size: 14px;
+.navbar {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 79px;
+   
+    /* display: flex; */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
 }
 
-.footer-top ul{
-  padding: 0px;
-}
-.footer-top h4{
-  color: #FDB819;
-  font-size: 16px;
-  font-weight: 800;
-}
-
-.footer-top a{
-  color: #FFF;
-  text-decoration: none;
-  font-weight: 300;
-}
-.footer-top a:hover{
-  color: #fdb819;
-}
-.footer-bottom{
-  padding: 10px;
-  font-size: 12px;
-}
 
 
 .dropdown:hover .dropdown-menu,.dropend:hover .dropdown-menu {
@@ -327,6 +313,14 @@ form.field-delete-form {
     position: absolute;
     top: 5px;
     right: 5px;
+}
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    vertical-align: top;
+    border-color: #dee2e6;
+    margin-top: 20px;
 }
 @media only screen and (max-width: 990px){
 .container{

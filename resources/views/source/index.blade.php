@@ -6,34 +6,19 @@
   </div>
 </div>
 <div class="container">
-<div class="row content-justify-center">
- <div class="col">
-  <table class="table table-bordered">
-  <thead>
-   <tr>
-    <th>Name</th>
-    <th>Bio</th>
-    <th>Status</th>
-    <th>Title</th>
-    <th>Company</th>
-    <th></th>
-   </tr>
-  </thead>
-  <tbody>
-  @foreach($sources as $source)
-  <tr>
-  <td>{{$source->name}}</td>
-  <td>{{$source->bio}}</td>
-  <td>{{$source->status}}</td>
-  <td>{{$source->title}}</td>
-  <td>{{$source->company}}</td>
-  <td><a href="/source/{{$source->id}}" class="btn btn-sm btn-success">VIEW</a>
-  </tr>
-  @endforeach
-  </tbody>
-  </table>
-
- </div>
+@foreach ($sources->chunk(4) as $chunk)
+    <div class="row g-3">
+        @foreach ($chunk as $source)
+        <div class="col-sm-3">
+            <x-source-card-slim :source=$source class="card h-100"></x-source-card-slim>
+        </div>
+        @endforeach
+    </div>
+@endforeach
+<div class="row">
+  <div class="col-sm-12">
+    {{$sources->links()}}
+  </div>
 </div>
 </div>
 @endsection
