@@ -5,13 +5,14 @@
   <h2>Subscription</h2>
   </div>
 </div>
+<!-- user_id','package','date','expiry_date','status','amount' -->
 <div class="row content-justify-center">
  <div class="col-sm-6">
   <form action="/subscription" method="POST">
   @csrf
    <div class="form-group">
    <label>Package</label>
-   <input type="text" name="channel" class="form-control">
+   <input type="text" name=" package" class="form-control">
    </div>
    <div class="form-group">
    <label>Date</label>
@@ -23,11 +24,14 @@
    </div>
    <div class="form-group">
    <label>Status</label>
-   <input type="text" name="date" class="form-control">
+   <select class="form-select" name="status">
+   <option value="Active">Active</option>
+   <option value="Inactive">Inactive</option>
+   </select>
    </div>
    <div class="form-group">
    <label>Amount</label>
-   <input type="text" name="date" class="form-control">
+   <input type="text" name="amount" class="form-control">
    </div>
    <div class="form-group">
    <label>User</label>

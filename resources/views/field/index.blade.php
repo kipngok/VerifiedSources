@@ -14,6 +14,7 @@
     <th>Name</th>
     <th>Description</th>
     <th>Status</th>
+     <th>Action</th>
     
     </tr>
    </thead>
@@ -21,11 +22,11 @@
    @foreach($fields as $field)
      <tr>
      <td>{{$field->name}}</td>
-     <td>{{$field->description}}/td>
-     <td>{{$field->status}}/td>
+     <td>{{$field->description}}</td>
+     <td>{{$field->status}}</td>
  
 
-     <td><a href="/field/{{$field->id}}" class="btn btn-sm btn-success">View</a></td>
+     <td><a href="/field/{{$field->id}}" class="btn btn-sm btn-info"><i class="fa fa-eye"></i> View</a></td>
      </tr>
      @endforeach
    </tbody>

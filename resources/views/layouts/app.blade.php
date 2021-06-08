@@ -30,7 +30,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item"><a href="/source" class="nav-link">Sources</a></li>
+                        <li class="nav-item"><a href="/field" class="nav-link">Field</a></li>
+                        <li class="nav-item"><a href="/payment" class="nav-link">Payments</a></li>
+                        <li class="nav-item"><a href="/subscription" class="nav-link">Subscriptions</a></li>
+                        <li class="nav-item"><a href="/user" class="nav-link">Users</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -50,9 +54,8 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                {{ Auth::user()->name }}
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{-- {{ Auth::user()->name }} --}}
+                                    {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -73,9 +76,8 @@
             </div>
         </nav>
     <div class="row main-content">
-                    @include('includes.sidebar')
-              <div class="cont col-sm-10">
-                  <div style="min-height: calc(100vh - 150px)">
+              <div class="cont col-sm-12">
+                  <div style="min-height: calc(100vh - 150px); z-index: 1px;">
                     @yield('content')
                   </div>
                 </div>

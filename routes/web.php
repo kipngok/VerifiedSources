@@ -25,8 +25,10 @@ Route::resource('/field','App\Http\Controllers\FieldController');
 Route::resource('/package','App\Http\Controllers\PackageController');
 Route::resource('/payment','App\Http\Controllers\PaymentController');
 Route::resource('/source','App\Http\Controllers\SourceController');
+Route::get('/source/field/{id}','App\Http\Controllers\SourceController@field');
 Route::resource('/sourceField','App\Http\Controllers\SourceFieldController');
 Route::resource('/subscription','App\Http\Controllers\SubscriptionController');
+
 
 
 

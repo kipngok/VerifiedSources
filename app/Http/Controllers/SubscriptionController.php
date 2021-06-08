@@ -65,7 +65,7 @@ class SubscriptionController extends Controller
         //
         $users=User::all();
         $packages=Package::all();
-        return view('subscription.show',compact('users','packages'));
+        return view('subscription.show',compact('subscription','users','packages'));
     }
 
     /**
@@ -77,7 +77,8 @@ class SubscriptionController extends Controller
     public function edit(Subscription $subscription)
     {
         //
-        return view('subscription.edit', compact('subscription'));
+        $user=User::all();
+        return view('subscription.edit', compact('subscription','user'));
     }
 
     /**
@@ -90,8 +91,10 @@ class SubscriptionController extends Controller
     public function update(Request $request, Subscription $subscription)
     {
         //
+         
         $input=$request->all();
         $subscription->update($input);
+          return redirect('subscription/'.$subscription->id);
     }
 
     /**
